@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ethical-academy
+    runtime: python
+    rootDir: ethical_practice_site
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SITE_NAME
+        value: Ethical Academy
+      - key: SITE_DOMAIN
+        value: https://ethical-academy.onrender.com
